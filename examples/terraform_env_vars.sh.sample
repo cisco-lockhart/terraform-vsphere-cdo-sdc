@@ -1,0 +1,15 @@
+export TF_VAR_vsphere_server=<insert-value>
+export TF_VAR_vsphere_username=<insert-value>
+export TF_VAR_vsphere_password=<insert-value>
+export TF_VAR_datacenter=<insert-value>
+export TF_VAR_resource_pool=<insert-value>
+export TF_VAR_host=<insert-value>
+export TF_VAR_datastore=<insert-value>
+export TF_VAR_network=<insert-value>
+export TF_VAR_cdo_base_url=<insert-value>
+export TF_VAR_cdo_api_token=<insert-value>
+export TF_VAR_cdo_tenant_name=<insert-value>
+export TF_VAR_ip_address=<insert-value>
+export TF_VAR_gateway=<insert-value>
+export TF_VAR_cdo_user_password=<insert-value>
+export TF_VAR_root_user_password=<insert-value>
