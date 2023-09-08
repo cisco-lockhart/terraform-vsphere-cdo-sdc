@@ -5,16 +5,16 @@ resource "vsphere_folder" "sdc_folder" {
 }
 
 resource "vsphere_content_library" "sdc_content_library" {
+  count           = var.sdc_content_library_item_id == null ? 1 : 0
   name            = "${var.cdo_tenant_name}-content-library"
   description     = "Content library to hold SDC OVAs for CDO tenant ${var.cdo_tenant_name}"
-  count           = var.sdc_content_library_item_id == null ? 1 : 0
   storage_backing = [data.vsphere_datastore.datastore.id]
 }
 
 resource "vsphere_content_library_item" "sdc_template" {
+  count       = var.sdc_content_library_item_id == null ? 1 : 0
   name        = "cdo-sdc"
   description = "CDO SDC (autoprovisioning enabled)"
-  count       = var.sdc_content_library_item_id == null ? 1 : 0
   file_url    = var.sdc_ova_location == null ? (var.datacenter_region == "us" ? local.us_ovf_url : local.eu_ovf_url) : var.sdc_ova_location
   library_id  = vsphere_content_library.sdc_content_library[0].id
 }
