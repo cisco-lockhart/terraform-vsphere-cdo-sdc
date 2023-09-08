@@ -4,7 +4,7 @@ resource "cdo_sdc" "cdo-sdc-vmware" {
 }
 
 module "vsphere-cdo-sdc" {
-  source               = "github.com/cisco-lockhart/terraform-vsphere-cdo-sdc?ref=v0.0.1" #TODO change with the correct source
+  source               = "github.com/cisco-lockhart/terraform-vsphere-cdo-sdc?ref=v0.0.2" #TODO change with the correct source
   vsphere_username     = var.vsphere_username
   vsphere_password     = var.vsphere_password
   vsphere_server       = var.vsphere_server
