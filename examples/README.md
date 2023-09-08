@@ -6,10 +6,17 @@ To use this example, you will need a CDO tenant and API token in addition to the
 
 - Log in to your CDO account in the [US](https://www.defenseorchestrator.com), the [EU](https://www.defenseorchestrator.eu), or the [Asia-Pacific and Japan region](https://apj.cdo.cisco.com).
 - Create an [API-only user](https://docs.defenseorchestrator.com/c-delete-a-user-record-for-a-user-role.html#!t-create-api-only-users.html).
-- Set the values for `cdo_base_url`, `cdo_api_token`, and `cdo_tenant_name`, either using environment variables with the `TF_VAR_` prefix or by specifying a default.
-- Set the values for all of the vSphere-specific resources, either using environment variables with the `TF_VAR_` prefix or by specifying a default.
-
-Note: you can update the environment variables in `terraform_env_vars.sh.sample` and source that into your shell if you like.
+- Copy `terraform_env_vars.sh.sample` to `terraform_env_vars.sh`
+```
+cp terraform_env_vars.sh.sample terraform_env_vars.sh
+```
+- Edit `terraform_env_vars.sh` (which is in .gitignore) and do the following:
+    - Set the values for `cdo_base_url`, `cdo_api_token`, and `cdo_tenant_name`, either using environment variables with the `TF_VAR_` prefix or by specifying a default.
+    - Set the values for all of the vSphere-specific resources, either using environment variables with the `TF_VAR_` prefix or by specifying a default.
+    - Source `terraform_env_vars.sh`:
+    ```
+    source ./terraform_env_var.sh
+    ```
 
 ## Run Terraform
 
